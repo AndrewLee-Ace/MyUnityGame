@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balloon_Movement : MonoBehaviour
+public class Pin_Movement : MonoBehaviour
 {
-     private float direction = 1;
+    private float direction = 1;
      private Vector3 movement;
 
     // Start is called before the first frame update
@@ -20,9 +20,7 @@ public class Balloon_Movement : MonoBehaviour
         transform.position = transform.position + movement * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.tag == "Barrier")
-            direction = direction * -1f;
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-    }
+     private void OnCollisionEnter2D(Collision2D collision){
+         Destroy(gameObject);
+     }
 }

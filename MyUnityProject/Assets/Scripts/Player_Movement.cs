@@ -39,4 +39,8 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
             grounded = true;
     }
+
+    private void Shoot(){
+        
+    }
 }
