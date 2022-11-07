@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 8384264227665974476}
   - component: {fileID: 8384264227665974477}
   - component: {fileID: 8384264227665974483}
-  - component: {fileID: -3189380758779972305}
   - component: {fileID: 3362817151392940907}
   - component: {fileID: 8931854054484449115}
+  - component: {fileID: 8648897651882574684}
+  - component: {fileID: -6441431411993693804}
   m_Layer: 0
-  m_Name: Pin-prefab
-  m_TagString: Untagged
+  m_Name: Pins
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fe1b1152f584c4892a6dd34bc2b65ee1, type: 3}
-  m_Color: {r: 0.9490196, g: 0.99607843, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.99607843, b: 0.61443585, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,27 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3742a81ce0ab54e7d88d9187c11d9522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &-3189380758779972305
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8384264227665974479}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
 --- !u!58 &3362817151392940907
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +111,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.9717525, y: -2.3069577}
@@ -147,9 +127,44 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.2699126, y: 0.17140251}
   serializedVersion: 2
   m_Radius: 0.64216614
+--- !u!50 &8648897651882574684
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384264227665974479}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &-6441431411993693804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384264227665974479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5009defd88f7f450dbef4bddd55a9d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  source: {fileID: 0}
