@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class Balloon_Movement : MonoBehaviour
 {
-    [SerializeField] AudioSource source;
      private float direction = 1;
      private Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-       if (source == null){
-        source = GetComponent<AudioSource>();
-       }
+       
     }
 
     // Update is called once per frame
@@ -23,7 +20,7 @@ public class Balloon_Movement : MonoBehaviour
         transform.position = transform.position + movement * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
+    private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "Barrier"){
             direction = direction * -1f;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
@@ -32,10 +29,4 @@ public class Balloon_Movement : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter2D (Collider2D collision){
-        if(collision.gameObject.tag == "Projectile"){
-            AudioSource.PlayClipAtPoint(source.clip, transform.position);
-            Destroy(gameObject);
-       }
-    }
 }    

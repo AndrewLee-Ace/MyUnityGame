@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Pin : MonoBehaviour
 {
-    [SerializeField] GameObject controller;
+  
     [SerializeField] AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
-        if (controller == null)
-        {
-            controller = GameObject.FindGameObjectWithTag("GameController");
-        }
+        
         // if (GetComponent<AudioSource>() == null)
         // {
         //     audio = GetComponent<AudioSource>();

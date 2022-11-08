@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Balloon : MonoBehaviour
+{
+    [SerializeField] AudioSource source;
+    private GameObject balloon;
+    // Start is called before the first frame update
+    void Start()
+    {
+       if (source == null){
+        source = GetComponent<AudioSource>();
+       } 
+
+       InvokeRepeating("GrowBalloon", 5.0f, 0.3f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (gameObject.transform.localScale.x  > 0.8f|| gameObject.transform.localScale.y > 0.8f){
+            CancelInvoke("GrowBalloon");
+            // InvokeRepeating("ShrinkBalloon", 1f, 0.3f);
+        }
+    }
+
+     private void OnTriggerEnter2D (Collider2D collision){
+        if(collision.gameObject.tag == "Projectile"){
+            AudioSource.PlayClipAtPoint(source.clip, transform.position);
+            Destroy(gameObject);
+       }
+    }
+
+    private void GrowBalloon()
+    {
+        if(transform.localScale.x > 0f)
+            gameObject.transform.localScale += new Vector3(.025f, .025f, 0f);
+        else
+            gameObject.transform.localScale += new Vector3(-.025f, .025f, 0f);
+    }
+
+    // private void ShrinkBalloon()
+    // {
+    //      if(transform.localScale.x > 0f && transform.localScale.x > 0.8f)
+    //         gameObject.transform.localScale += new Vector3(-.025f, -.025f, -0f);
+    //     else if (transform.localScale.x < 0f && transform.localScale.x > 0.8f)
+    //         gameObject.transform.localScale += new Vector3(.025f, -.025f, -0f);
+    // }
+
+    
+}
