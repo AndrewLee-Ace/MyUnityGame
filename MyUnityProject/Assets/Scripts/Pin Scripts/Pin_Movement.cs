@@ -24,11 +24,7 @@ public class Pin_Movement : MonoBehaviour
         transform.position = transform.position + movement * Time.deltaTime;
     }
 
-     private void OnTriggerEnter2D(Collider2D collision){
-         if (collision.gameObject.tag == "Roof"){
-            Destroy(gameObject);
-         }  
-     }
+
 
     
 }

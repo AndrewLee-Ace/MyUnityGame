@@ -5,11 +5,12 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 10;
+    [SerializeField] private GameObject pins;
     private Rigidbody2D body;
     private bool grounded;
-    [SerializeField] private GameObject pins;
-    // public ProjectileBehaviour pins;
+    
     public Transform launchOffest;
+
     // Start is called before the first frame update
     void Start()
     {

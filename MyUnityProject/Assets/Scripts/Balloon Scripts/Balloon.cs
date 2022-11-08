@@ -6,12 +6,17 @@ public class Balloon : MonoBehaviour
 {
     [SerializeField] AudioSource source;
     private GameObject balloon;
+    private Scoring scoreKeeper;
     // Start is called before the first frame update
     void Start()
     {
        if (source == null){
         source = GetComponent<AudioSource>();
        } 
+
+       if (scoreKeeper == null){
+            scoreKeeper = GameObject.Find("ScoreKeeper").GetComponent<Scoring>();
+        }
 
        InvokeRepeating("GrowBalloon", 5.0f, 0.3f);
     }
@@ -29,6 +34,7 @@ public class Balloon : MonoBehaviour
         if(collision.gameObject.tag == "Projectile"){
             AudioSource.PlayClipAtPoint(source.clip, transform.position);
             Destroy(gameObject);
+            scoreKeeper.UpdateScore(5);
        }
     }
 

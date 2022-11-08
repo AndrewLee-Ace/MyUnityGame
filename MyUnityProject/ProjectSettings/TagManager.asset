@@ -9,6 +9,8 @@ TagManager:
   - Roof
   - Balloon
   - Projectile
+  - Obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX
