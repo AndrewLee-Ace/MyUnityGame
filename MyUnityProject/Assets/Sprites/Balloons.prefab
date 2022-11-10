@@ -159,4 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d456490e268e54ce69cd9cd7a5cb8c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 1779224616724115812, guid: c8c318bbf739248b5b9cc51d1dcf5bef, type: 3}
+  pop_sound: {fileID: 1779224616724115812, guid: c8c318bbf739248b5b9cc51d1dcf5bef, type: 3}
+  deflate_sound: {fileID: 3930029965978823600, guid: b477a2eb644fc48738cb97a53fc680ce, type: 3}

@@ -16,11 +16,11 @@ public class Obstacle_Barrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector3(20 * direction, 0f, 0f);
+        movement = new Vector3(25 * direction, 0f, 0f);
         transform.position = transform.position + movement * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
+    private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "Barrier"){
             direction = direction * -1f;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);

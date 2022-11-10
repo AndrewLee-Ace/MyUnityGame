@@ -35,7 +35,7 @@ public class Player_Movement : MonoBehaviour
             Jump();
 
         //Shoot
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire2")){
             Instantiate(pins, launchOffest.position, Quaternion.identity);
         }
     }
