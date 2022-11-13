@@ -11,6 +11,10 @@ TagManager:
   - Projectile
   - Obstacle
   - Enemy
+  - Pause
+  - Main Menu
+  - Resume
+  - Volume
   layers:
   - Default
   - TransparentFX

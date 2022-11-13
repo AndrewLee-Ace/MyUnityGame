@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SceneManagers : MonoBehaviour
+public class High_Scores : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,9 +14,5 @@ public class SceneManagers : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void Lvl1(){
-        SceneManager.LoadScene("Lvl 1");
     }
 }
