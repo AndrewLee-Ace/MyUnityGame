@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6198736567183006419}
   - component: {fileID: 4330537704824546934}
   m_Layer: 0
-  m_Name: BackButton
+  m_Name: AwayFromPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

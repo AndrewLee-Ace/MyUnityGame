@@ -15,6 +15,7 @@ TagManager:
   - Main Menu
   - Resume
   - Volume
+  - GameOver
   layers:
   - Default
   - TransparentFX

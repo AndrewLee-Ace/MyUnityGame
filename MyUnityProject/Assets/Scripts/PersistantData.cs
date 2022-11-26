@@ -11,9 +11,11 @@ public class PersistantData : MonoBehaviour
 
     public void Awake()
     {
-         if (Instance == null){
-            DontDestroyOnLoad(this);
+         if (Instance == null)
+         {
             Instance = this;
+
+            DontDestroyOnLoad(this);
         }
         else
             Destroy(gameObject);
@@ -23,8 +25,8 @@ public class PersistantData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       playerName ="";
-       playerScore =0;
+       playerName = "";
+       playerScore = 0;
     }
 
     public void SetName(string name){
@@ -38,13 +40,8 @@ public class PersistantData : MonoBehaviour
         return playerName;
     }
 
-    public int GetScore(string score){
+    public int GetScore(){
         return playerScore;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

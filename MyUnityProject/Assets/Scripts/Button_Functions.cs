@@ -10,7 +10,9 @@ public class Button_Functions : MonoBehaviour
     void Start()
     {
         if(gameObject.tag == "Resume" || gameObject.tag == "Main Menu")
+        {
             gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -62,8 +64,4 @@ public class Button_Functions : MonoBehaviour
         }
     }
 
-    public void MoveSlider()
-    {
-
-    }
 }
