@@ -12,19 +12,28 @@ public class Scoring : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI gameOverText;
     public Button gameOverButton;
+    public Button pauseButton;
     public int score;
     const int SCORE_TO_ADVANCE = 32;
     public int currentLevel;
     public float timeLeft;
     public bool timerOn = false;
+    public string playerName;
+    public int playerScore;
 
     
     // Start is called before the first frame update
+    void Awake()
+    {
+        pauseButton = GetComponent<Button>();
+    }
     void Start()
     {
-        
+        playerScore = PersistantData.Instance.GetScore();
+        playerName = PersistantData.Instance.GetName();
         gameOverText.gameObject.SetActive(false);
         gameOverButton.gameObject.SetActive(false);
+        pauseButton = GameObject.Find("Pause").GetComponent<Button>();
         timerOn = true;
         score = 0;
         currentLevel = SceneManager.GetActiveScene().buildIndex;
@@ -48,6 +57,8 @@ public class Scoring : MonoBehaviour
                 timerOn = false;
                 gameOverText.gameObject.SetActive(true);
                 gameOverButton.gameObject.SetActive(true);
+                pauseButton.gameObject.SetActive(false);
+                Time.timeScale = 0f;
             }
         }
     }
@@ -55,6 +66,8 @@ public class Scoring : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        playerScore += scoreToAdd;
+        PersistantData.Instance.SetScore(playerScore);
         DisplayScore();
 
         if (score >= SCORE_TO_ADVANCE)

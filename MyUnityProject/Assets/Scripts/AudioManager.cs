@@ -29,6 +29,11 @@ public class AudioManager : MonoBehaviour
         LoadVolume();
     }
 
+    void Start()
+    {
+        LoadVolume();
+    }
+
     void LoadVolume()   //VolumeSettings saved in VolumeSettings with OnDisable function
     {
         float musicVolume = PlayerPrefs.GetFloat(MUSIC_KEY, 1f);

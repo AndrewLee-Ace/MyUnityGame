@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Button_Functions : MonoBehaviour
 {
+    [SerializeField] TMP_InputField inputField;
     // Start is called before the first frame update
     //hi
     void Start()
@@ -15,12 +17,6 @@ public class Button_Functions : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Instructions()
     {
         SceneManager.LoadScene("Instructions");
@@ -28,6 +24,8 @@ public class Button_Functions : MonoBehaviour
 
     public void PlayGame()
     {
+        string s = inputField.text;
+        PersistantData.Instance.SetName(s);
         SceneManager.LoadScene("Lvl 1");
     }
 
@@ -54,6 +52,16 @@ public class Button_Functions : MonoBehaviour
         Time.timeScale = 1f;
     }
     
+    public void HighScores()
+    {
+        SceneManager.LoadScene("HighScores");
+    }
+
+     public void ClearData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void ToggleButton()
     {
         if (gameObject.activeSelf == true){
