@@ -16,6 +16,8 @@ TagManager:
   - Resume
   - Volume
   - GameOver
+  - Bleep
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -55,4 +57,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ForeGround
+    uniqueID: 4255019997
     locked: 0

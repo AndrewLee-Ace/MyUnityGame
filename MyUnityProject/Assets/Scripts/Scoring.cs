@@ -11,6 +11,7 @@ public class Scoring : MonoBehaviour
     public TextMeshProUGUI sceneText;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI gameOverText;
+    //public TextMeshProUGUI healthText;
     public Button gameOverButton;
     public Button pauseButton;
     public int score;
@@ -20,6 +21,8 @@ public class Scoring : MonoBehaviour
     public bool timerOn = false;
     public string playerName;
     public int playerScore;
+    // public int playerHealth;
+    // public int health;
 
     
     // Start is called before the first frame update
@@ -29,6 +32,7 @@ public class Scoring : MonoBehaviour
     }
     void Start()
     {
+        //playerHealth = PersistantData.Instance.GetHealth();
         playerScore = PersistantData.Instance.GetScore();
         playerName = PersistantData.Instance.GetName();
         gameOverText.gameObject.SetActive(false);
@@ -36,9 +40,11 @@ public class Scoring : MonoBehaviour
         pauseButton = GameObject.Find("Pause").GetComponent<Button>();
         timerOn = true;
         score = 0;
+        //health = 3;
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         DisplayLevel();
         DisplayScore();
+        //DisplayHealth();
     }
 
     // Update is called once per frame
@@ -74,6 +80,14 @@ public class Scoring : MonoBehaviour
             AdvanceLevel();
     }
 
+    // public void UpdateHealth(int healthToPut)
+    // {
+    //     health += healthToPut;;
+    //     playerHealth += healthToPut;
+    //     PersistantData.Instance.SetHealth(playerHealth);
+    //     DisplayHealth();
+    // }
+
     public void UpdateTimer(float currentTime)
     {
         currentTime += 1;
@@ -93,6 +107,11 @@ public class Scoring : MonoBehaviour
     {
         sceneText.text = "Level: " + (currentLevel + 1);
     }
+
+    // public void DisplayHealth()
+    // {
+    //     healthText.text = "Health: " + health;
+    // }
 
     public void AdvanceLevel()
     {

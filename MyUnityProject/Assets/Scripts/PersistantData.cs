@@ -6,6 +6,7 @@ public class PersistantData : MonoBehaviour
 {
     [SerializeField] string playerName;
     [SerializeField] int playerScore;
+    [SerializeField] int playerHealth;
 
     public static PersistantData Instance;
 
@@ -36,12 +37,12 @@ public class PersistantData : MonoBehaviour
     public void SetScore(int score){
         playerScore = score;
     }
+
     public string GetName(){
         return playerName;
-    }
+    } 
 
     public int GetScore(){
         return playerScore;
     }
-
 }

@@ -18,7 +18,25 @@ public class Pin_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // movement = new Vector3(0f, 15 * direction, 0f);
+        // // transform.position = transform.position + movement * Time.deltaTime;
+
+        // transform.position = transform.position + movement * Time.deltaTime;
+        FireUp();
+        //FireStraight();
+    }
+
+    void FireUp()
+    {
         movement = new Vector3(0f, 15 * direction, 0f);
+        // transform.position = transform.position + movement * Time.deltaTime;
+
+        transform.position = transform.position + movement * Time.deltaTime;
+    }
+
+    void FireStraight()
+    {
+        movement = new Vector3(15 * direction, 0f, 0f);
         // transform.position = transform.position + movement * Time.deltaTime;
 
         transform.position = transform.position + movement * Time.deltaTime;

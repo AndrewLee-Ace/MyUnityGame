@@ -8,7 +8,6 @@ public class Button_Functions : MonoBehaviour
 {
     [SerializeField] TMP_InputField inputField;
     // Start is called before the first frame update
-    //hi
     void Start()
     {
         if(gameObject.tag == "Resume" || gameObject.tag == "Main Menu")
