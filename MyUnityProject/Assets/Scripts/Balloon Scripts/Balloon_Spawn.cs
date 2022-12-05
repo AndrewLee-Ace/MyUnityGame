@@ -20,8 +20,8 @@ public class Balloon_Spawn : MonoBehaviour
 
     public void Spawn(GameObject x)
     {
-        float xMin = -20f;
-        float xMax = 21f;
+        float xMin = -19f;
+        float xMax = 20f;
         float yMin = 2f;
         float yMax = 13f;
 
