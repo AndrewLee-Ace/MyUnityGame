@@ -509,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -29}
+  m_AnchoredPosition: {x: 12, y: 155}
   m_SizeDelta: {x: 803.3342, y: 312.5622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627689490
@@ -532,9 +532,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Your goal is to pop the balloons as they move across the screen.\nIn order
-    to advance to the next stage you must get at least 32 points. \n\n\tGood Luck
-    and watch out for aliens!"
+  m_text: "Your goal is to pop the balloons as they move across the screen.\n\nThe
+    higher the level you go, the game gets increasingly difficult with new challenges
+    appearing.\n\nIn order to advance to the next stage you must get at least 32
+    points. \n\n\tGood Luck and watch out for aliens!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
